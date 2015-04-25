@@ -1,5 +1,11 @@
 package otherImpls;
 
+/**
+ * Created for PiJ Coursework 5
+ * @author Annabel Jump
+ * A Quiz Game
+ */
+
 import otherInterfaces.Question;
 
 public class QuestionImpl implements Question {
@@ -17,7 +23,7 @@ public class QuestionImpl implements Question {
 	}
 
 	@Override
-	public void setAnswer(int question, int answer) {
+	public void setAnswer(int question, String answer) {
 		// TODO Auto-generated method stub
 
 	}

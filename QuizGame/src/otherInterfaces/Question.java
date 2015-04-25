@@ -23,10 +23,10 @@ public interface Question {
 	/**
 	 * Set an answer to the question
 	 * Multiple choice, so can have up to 4 answers
-	 * @param the question number
 	 * @param the answer number
+	 * @param the answer wanted to input
 	 */
-	void setAnswer(int question, int answer);
+	void setAnswer(int question, String answer);
 	
 	/**
 	 * Set which answer is the correct one
