@@ -10,5 +10,42 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 public interface QuizGameServer extends Remote {
+	
+	//TODO Create Quiz Class and Player Class - cannot see how to do without these
+	
+	/**
+	 * Starts the quiz with the requested ID
+	 * @param the ID of the quiz
+	 * @return the quiz
+	 */
+	Quiz playQuiz(int iD) throws RemoteException;
+	
+	/**
+	 * Server will need method for adding quiz
+	 * Should return the iD for the quiz
+	 * @param the quiz to be made
+	 * @return the iD of the quiz
+	 */
+	int createQuiz(Quiz newQuiz) throws RemoteException;
+	
+	/**
+	 * Server will need method to end quiz
+	 * Should return the highest scoring player
+	 * {Potential Additional: Return list of top three?}
+	 * {Potential Additional: check creator is closing}
+	 * @param the iD of the quiz to be closed
+	 * @return the highest scoring player
+	 */
+	Player destroyQuiz(int iD) throws RemoteException;
+	
+	/**
+	 * Server will need method to add a new player
+	 * {Additional: Player unique iD?}
+	 * {Additional: Password?}
+	 * @param the player name
+	 */
+	void newPlayer(String newbieName) throws RemoteException;
+	
+	//TODO consider how to store all things in Server - Flush method?
 
 }
