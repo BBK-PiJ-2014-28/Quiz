@@ -13,6 +13,11 @@ import java.rmi.registry.LocateRegistry;
 
 public class QuizGameServerLauncher {
 
+	public static void main(String args[]){
+		QuizGameServerLauncher launcher = new QuizGameServerLauncher();
+		launcher.launch();
+	}
+	
 	private void launch(){
 		if (System.getSecurityManager() == null){
 			System.setSecurityManager(new RMISecurityManager());
