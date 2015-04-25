@@ -20,12 +20,13 @@ public class PlayerImplTest {
 	private int iD;
 	private String name;
 	public int score;
+	public PlayerImpl testPlayer;
 	
 
 	@Before
 	public void setUp() throws Exception {
-		testPlayer = new PlayerImpl("n00b", 1337);
-		testPlayer.setCurrentScore(3);
+		testPlayer = new PlayerImpl(1337, "n00b");
+		testPlayer.setScore(3);
 	}
 
 	@After

@@ -13,27 +13,64 @@ import otherInterfaces.Player;
 
 public class PlayerImpl implements Player, Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 5799469790743674521L;
 
+	private int iD;
+    private String name;
+    private int score;
+
+    //Constructors
+
+    public PlayerImpl(String thisName){
+        this.setName(thisName);
+    }
+
+	public PlayerImpl(int ID){
+        this.setID(ID);
+    }
+
+	public PlayerImpl(int number, String playerName){
+        this.setID(number);
+        this.setName(playerName);
+    }
+
+    public PlayerImpl(String aName, int iDent, int myScore){
+        this.setID(iDent);
+        this.setName(aName);
+        this.setScore(myScore);
+    }
+
+	//Getters and Setters
+    
+    private void setName(String thisName) {
+		this.name = thisName;		
+	}
+    
+    private void setID(int iD2) {
+		this.iD = iD2;
+	}
+    
+    public void setScore(int myScore) {
+		this.score = myScore;
+		
+	}
+	
 	@Override
 	public String getPlayerName() {
-		// TODO Auto-generated method stub
-		return null;
+		String playerName = this.name;
+		return playerName;
 	}
 
 	@Override
 	public int getPlayerID() {
-		// TODO Auto-generated method stub
-		return 0;
+		int playerId = this.iD;
+		return playerId;
 	}
 
 	@Override
 	public int getCurrentScore() {
-		//TODO
-		return 0;
+		int currentScore = this.score;
+		return currentScore;
 	}
 	
 	//Not sure this should be in Player Class
