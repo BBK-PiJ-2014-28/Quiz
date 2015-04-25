@@ -19,7 +19,8 @@ SET-UP CLIENT program:
 PLAYER CLIENT program:
   See list of quizzes to choose one - include descriptor/title field in server quiz lists with IDs.
   Record player answers, keep counter of score of correct answers and return at the end.
-  First should ask player for name? To keep score - or at end of quiz?
+  Will probably require new class:
+  [First should ask player for name? To keep score - or at end of quiz?]
   
 QUIZ GAME SERVER:
   Keep list of names of quizzes, with corresponding IDs (for retrieval of questions/answers) - able to send for display in player program.
