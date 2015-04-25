@@ -63,5 +63,12 @@ public class QuestionImplTest {
 		assertEquals("Blue", testQuestion.getAnswer(3));
 		assertEquals("My name is Sir Lancelot of Camelot.", testQuestion.getAnswer(4));
 	}
+	
+	@Test
+	public void testSetCorrect(){
+		testQuestion.setCorrect(4);
+		//to test this should add method to view correct answer TODO
+		assertEquals("My name is Sir Lancelot of Camelot.", testQuestion.getCorrect());
+	}
 
 }
