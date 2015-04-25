@@ -8,11 +8,12 @@ by Annabel Jump for Programming in Java Coursework 5.
 Plan for executing coursework :-
 
 SET-UP CLIENT program:
-  Initialize arrays with unique IDs - two Arrays, one for questions and one for corresponding answers (should answers be ENUM? Multiple choice! Can ENUM be set by user?);
-  Will be written to server as a list of the Arrays and will be assigned a unique ID.
-  There should be a third array for player scores, which can be sorted into order of high-low scores (parameters name and questions answered correctly - counter).
-  All Arrays to be sent to server in one list per quiz.
-  Quizzes and results should be retrievable by their unique ID (should each quiz-list have the ID? Test different        implementations).
+	Keep simple (K.I.S.S.) as per CW spec - only have new quiz and end quiz in set-up client, all functionality in square brackets should be in separate class.
+  [Initialize arrays with unique IDs - two Arrays, one for questions and one for corresponding answers (should answers be ENUM? Multiple choice! Can ENUM be set by user?);]
+  [Will be written to server as a list of the Arrays and will be assigned a unique ID.]
+  [There should be a third array for player scores, which can be sorted into order of high-low scores (parameters name and questions answered correctly - counter).]
+  [All Arrays to be sent to server in one list per quiz.]
+  [Quizzes and results should be retrievable by their unique ID (should each quiz-list have the ID? Test different implementations).]
   Should be a quiz close method to end the quiz.
   
 PLAYER CLIENT program:
