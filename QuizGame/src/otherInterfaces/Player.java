@@ -15,14 +15,14 @@ public interface Player {
 	 * @param player ID
 	 * @return the name of the player
 	 */
-	String getPlayerName(int iD);
+	String getPlayerName();
 	
 	/**
 	 * Get iD of player, given their name
 	 * @param player name
 	 * @return the iD of the player
 	 */
-	int getPlayerID(String name);
+	int getPlayerID();
 	
 	/**
 	 * Get score of player on quiz - two variants, with name, with iD
