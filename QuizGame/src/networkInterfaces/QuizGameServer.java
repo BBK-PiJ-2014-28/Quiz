@@ -6,12 +6,13 @@ package networkInterfaces;
  * A Quiz Game
  */
 
+import otherInterfaces.Player;
+import otherInterfaces.Quiz;
+
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 public interface QuizGameServer extends Remote {
-	
-	//TODO Create Quiz Class and Player Class - cannot see how to do without these
 	
 	/**
 	 * Starts the quiz with the requested ID
