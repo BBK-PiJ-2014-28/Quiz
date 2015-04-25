@@ -25,11 +25,19 @@ public interface Player {
 	int getPlayerID();
 	
 	/**
+	 * Get the current player score
+	 * Will be necessary to set new high scores
+	 * @return the score of the player
+	 */
+	int getCurrentScore();
+	
+	/**
 	 * Get score of player on quiz - two variants, with name, with iD
 	 * @param the ID of the quiz
 	 * @param the name of the player OR the ID of the player
 	 * @return the score of the player
 	 */
+	//Not sure this should be in this class - maybe in Quiz class
 	int getPlayerScore(int quizID, String playerName);
 	
 	int getPlayerScore(int quizID, int playerID);

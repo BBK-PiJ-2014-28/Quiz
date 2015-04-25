@@ -19,11 +19,13 @@ public class PlayerImplTest {
 	
 	private int iD;
 	private String name;
+	public int score;
 	
 
 	@Before
 	public void setUp() throws Exception {
 		testPlayer = new PlayerImpl("n00b", 1337);
+		testPlayer.setCurrentScore(3);
 	}
 
 	@After
@@ -40,6 +42,11 @@ public class PlayerImplTest {
     @Test
     public void testNameFetch() {
         assertEquals("n00b", testPlayer.getPlayerName());
+    }
+    
+    @Test
+    public void testScoreFetch(){
+    	assertEquals(3, testPlayer.getCurrentScore());
     }
 
 }

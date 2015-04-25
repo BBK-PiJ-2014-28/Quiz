@@ -19,23 +19,31 @@ public class PlayerImpl implements Player, Serializable {
 	private static final long serialVersionUID = 5799469790743674521L;
 
 	@Override
-	public String getPlayerName(int iD) {
+	public String getPlayerName() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public int getPlayerID(String name) {
+	public int getPlayerID() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
+	@Override
+	public int getCurrentScore() {
+		//TODO
+		return 0;
+	}
+	
+	//Not sure this should be in Player Class
 	@Override
 	public int getPlayerScore(int quizID, String playerName) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
+	//Not sure this should be in Player Class
 	@Override
 	public int getPlayerScore(int quizID, int playerID) {
 		// TODO Auto-generated method stub
