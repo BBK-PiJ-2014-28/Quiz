@@ -23,7 +23,7 @@ import networkImpls.*;
 
 public class SetupClientImpl implements SetupClient {
 	
-	List<Quiz> quizList = new ArrayList<Quiz>();
+	List<QuizImpl> quizList = new ArrayList<QuizImpl>();
 	List<Player> playerList = new ArrayList<Player>();
 	int IDcount = playerList.size();
 	Player currentUser = null;
@@ -154,8 +154,11 @@ public class SetupClientImpl implements SetupClient {
 
 	@Override
 	public void endQuiz(int ID) throws RemoteException {
-		// TODO Auto-generated method stub
-
+		QuizImpl finished = quizList.get(ID - 1);
+		int winningScore = finished.highScore;
+		System.out.println("And the high score was: " + winningScore);
+		Player finalist = finished.getWinner();
+		System.out.println("Which was achieved by: " + finalist);
 	}
 
 }

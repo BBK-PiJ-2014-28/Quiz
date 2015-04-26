@@ -14,11 +14,13 @@ import otherInterfaces.*;
 public class QuizImpl implements Quiz, Serializable {
 
 	private String quizName;
+	public Player currentPlayer;
+	public Player winner;
 	private int quizID;
 	private int playerScore;
-	private int highScore = 0;
+	public int highScore = 0;
 	private ArrayList<Question> tomRiddles = new ArrayList<Question>();
-	private int scores[] = new int[] {};
+	private QuizStatus quizStatus = QuizStatus.OPEN;
 
 	
 	//Constructors
@@ -138,8 +140,14 @@ public class QuizImpl implements Quiz, Serializable {
 		//Inserted into method to keep running highscore for simplicity of code
 		if (correct > highScore) {
 			highScore = correct;
+			winner = currentPlayer;
 		}
 		//Not sure array of scores is necessary (might also, if it is, be better to use arraylist)
+	}
+	
+	public Player getWinner(){
+		Player highScorer = winner;
+		return highScorer;
 	}
 	
 	@Override
@@ -150,6 +158,7 @@ public class QuizImpl implements Quiz, Serializable {
 	@Override
 	public boolean isHighScore(int score) {
 		if (score > highScore){
+			
 			return true;
 		}
 		return false;
