@@ -10,7 +10,7 @@ import java.net.MalformedURLException;
 import java.rmi.*;
 import java.rmi.registry.LocateRegistry;
 
-import networkInterfaces.QuizGameServer;
+import networkImpls.QuizGameServer;
 
 
 public class QuizGameServerLauncher {
