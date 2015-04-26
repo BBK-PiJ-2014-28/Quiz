@@ -6,41 +6,74 @@ package otherImpls;
  * A Quiz Game
  */
 
-import otherInterfaces.Question;
-import otherInterfaces.Quiz;
+import java.util.*;
+
+import otherInterfaces.*;
 
 public class QuizImpl implements Quiz {
 
+	private String quizName;
+	private int quizID;
+	private int playerScore;
+	private ArrayList<Question> tomRiddles = new ArrayList<Question>();
+	private int scores[];
 
+	
+	//Constructors
+	
+	public QuizImpl(String thisName){
+        this.setQuizName(thisName);
+    }
+
+	public QuizImpl(int ID){
+        this.setQuizID(ID);
+    }
+
+	public QuizImpl(int ID, String quizName){
+        this.setQuizID(ID);
+        this.setQuizName(quizName);
+    }
+
+    public QuizImpl(String quizName, int ID, int myScore){
+        this.setQuizID(ID);
+        this.setQuizName(quizName);
+        this.recordScore(myScore);
+    }
+    
+    //Getters and Setters
+    
 	@Override
 	public void setQuizID(int number) {
-		// TODO Auto-generated method stub
-		
+		this.quizID = number;
 	}
 	
 	@Override
 	public int getQuizID() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	
+		return this.quizID;
+	}	
 
 	@Override
 	public void setQuizName(String name) {
-		// TODO Auto-generated method stub
-		
+		this.quizName = name;
 	}
 
 	@Override
 	public String getQuizName() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.quizName;
+	}
+
+	public ArrayList<Question> getTomRiddes() {
+		return tomRiddles;
+	}
+
+	public void setTomRiddes(ArrayList<Question> tomRiddes) {
+		this.tomRiddles = tomRiddes;
 	}
 
 	@Override
 	public void setQuestion() {
-		// TODO Auto-generated method stub
-
+		Question newQuestion = new QuestionImpl();
+		tomRiddles.add(newQuestion);
 	}
 	
 	@Override
