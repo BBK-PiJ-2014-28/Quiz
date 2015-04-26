@@ -1,11 +1,5 @@
 package tests;
 
-/**
- * Created for PiJ Coursework 5
- * @author Annabel Jump
- * A Quiz Game
- */
-
 import static org.junit.Assert.*;
 
 import org.junit.After;
@@ -26,20 +20,18 @@ import networkInterfaces.*;
 import otherImpls.*;
 import networkImpls.*;
 
-public class SetupClientImplTest {
+public class PlayerClientImplTest {
 	
 	List<Quiz> quizList = new ArrayList<Quiz>();
 	List<Player> playerList = new ArrayList<Player>();
-	SetupClient testClient;
+	PlayerClient testClient;
 
 	@Before
 	public void setUp() throws Exception {
-		testClient = new SetupClientImpl();
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		testClient = null;
 	}
 
 	@Test
