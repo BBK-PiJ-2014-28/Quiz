@@ -50,14 +50,6 @@ public class SetupClientImpl implements SetupClient {
 	}
 	@Override
 	public Player login(int iD, String name) throws RemoteException {
-		Player result = null;
-		if ((id >= 0 && id < playerList.size()) 	&&
-			playerList.get(id).getName().equals(name)){
-			result = playerList.get(id);
-			System.out.println(result.display()+" logged in");
-		}else{
-			System.out.println("Login failed with "+id+" and "+name);
-		}
 		
 		return result;
 	}
