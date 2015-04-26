@@ -26,7 +26,7 @@ public class PlayerClientLauncher implements PlayerClient {
 		launcher.launch();
 	}
 	
-	private void launch(){
+	public void launch(){
 		if (System.getSecurityManager() == null){
 			System.setSecurityManager(new SecurityManager());
 		}
@@ -59,6 +59,18 @@ public class PlayerClientLauncher implements PlayerClient {
 	public int playQuiz() {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public Player newPlayer(int iD, String name) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Player login(int iD, String name) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

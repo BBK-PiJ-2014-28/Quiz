@@ -90,7 +90,7 @@ public class SetupClientImpl implements SetupClient {
 		} else if (option == 3) {
 			System.out.println("Thanks! Entering Create-a-quiz.");
 			quizMasterClient.newQuiz();
-			quizMasterClient.launch();
+			quizMasterClient.run();
 		} else if (option == 4) {
 			System.out.println("Are you sure? There is no going back.");
 			System.out.println("Enter the Quiz ID, or 0 to exit back to the menu");
