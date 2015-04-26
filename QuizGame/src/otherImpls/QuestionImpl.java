@@ -62,8 +62,6 @@ public class QuestionImpl implements Question, Serializable {
 		return this.questionNumber;
 	}
 
-	//Not currently working - needs fix
-	//Try ArrayList
 	@Override
 	public void setAnswer(int question, String answer) throws IllegalArgumentException {
 		while(answers.size() < 4) { 
@@ -71,36 +69,11 @@ public class QuestionImpl implements Question, Serializable {
 		}
 		int answerNumber = question - 1;
 		answers.set(answerNumber, answer);
-		
-		//Commented out the below as does not work
-		//if (question == 1){
-			//this.answer1 = answer;
-		//} else if (question == 2) {
-			//this.answer2 = answer;
-		//} else if (question == 3) {
-			//this.answer3 = answer;
-		//} else if (question == 4) {
-			//this.answer4 = answer;
-		//} else {
-			//throw new IllegalArgumentException();
-		//} 
 	}
 	
-	//Not currently working - needs fix - as setAnswer
 	@Override
 	public String getAnswer(int answerNumber) throws IllegalArgumentException {
 		String answer = answers.get(answerNumber - 1);
-		//if (answerNumber == 1){
-			//this.answer1 = answer;
-		//} else if (answerNumber == 2) {
-			//this.answer2 = answer;
-		//} else if (answerNumber == 3) {
-			//this.answer3 = answer;
-		//} else if (answerNumber == 4) {
-			//this.answer4 = answer;
-		//} else {
-			//throw new IllegalArgumentException();
-		//}
 		return answer;
 	}
 
@@ -109,23 +82,10 @@ public class QuestionImpl implements Question, Serializable {
 		this.correctAnswer = answer;
 	}
 	
-	
-	//Not working - trying ArrayList fix as above
 	@Override
 	public String getCorrect() {
 		int correct = this.correctAnswer - 1;
 		String answer = answers.get(correct);
-		
-		//String answer = null;
-		//if (correct == 1){
-			//this.answer1 = answer;
-		//} else if (correct == 2) {
-			//this.answer2 = answer;
-		//} else if (correct == 3) {
-			//this.answer3 = answer;
-		//} else if (correct == 4) {
-			//this.answer4 = answer;
-		//}
 		return answer;
 	}
 
