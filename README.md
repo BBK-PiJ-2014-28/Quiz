@@ -27,3 +27,7 @@ PLAYER:
 
 QUESTION:
 	Makes questions, assigns answers and indicates which is correct.
+	
+QUIZ:
+	Creates quiz names & accepts IDs, creates and stores questions.
+	Accepts scores and keeps track of high score.
