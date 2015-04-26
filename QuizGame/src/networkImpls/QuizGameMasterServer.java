@@ -10,17 +10,13 @@ import networkInterfaces.PlayerClient;
 import networkInterfaces.QuizGameService;
 import networkInterfaces.SetupClient;
 
-public class QuizGameMasterServer extends UnicastRemoteObject implements PlayerClient, QuizGameService,
-		SetupClient {
+public class QuizGameMasterServer extends UnicastRemoteObject implements PlayerClient, 
+		QuizGameService, SetupClient {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -1471392118156443119L;
 
 	protected QuizGameMasterServer() throws RemoteException {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

@@ -26,13 +26,15 @@ public class SetupClientLauncher implements SetupClient {
 		launcher.launch();
 	}
 	
-	private void launch(){
+	public void launch(){
 		if (System.getSecurityManager() == null){
 			System.setSecurityManager(new SecurityManager());
 		}
 		try {
 			Remote service = Naming.lookup("//127.0.0.1:1099/quiz");
 			QuizGameService setupClient = (QuizGameService) service;
+			
+			
 
 		} catch (MalformedURLException ex) {
 			ex.printStackTrace();
@@ -53,6 +55,18 @@ public class SetupClientLauncher implements SetupClient {
 	public void endQuiz(int ID) throws RemoteException {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public Player login(int iD, String name) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Player newPlayer(int iD, String name) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

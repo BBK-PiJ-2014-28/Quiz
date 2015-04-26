@@ -46,64 +46,65 @@ public class SetupClientImpl implements SetupClient {
 			
 			quizMasterClient = new SetupClientImpl();
 			
-			/**
-			 * What follows is the interface to be displayed to the User
-			 * It calls the launch method recursively to recall the menu.
-			 * {Should put this in new method so as not to look up the client each time}
-			 */
+			quizMasterClient.run();
 			
-			System.out.println("Hello, welcome to the Quiz Master section!");
-			System.out.println("What can we do for you?");
-			System.out.println("Press 1 to log in, 2 to create a User,"
-					+ " 3 to create a quiz, or 4 to close a quiz.");
-			System.out.println("You may enter 5 to exit.");
-			Scanner choice = new Scanner(System.in);
-			int option = choice.nextInt();
-			if (option == 1) {
-				System.out.println("Please enter your name:");
-				Scanner name = new Scanner(System.in);
-				String playerName = name.nextLine();
-				System.out.println("Please enter your unique ID (I hope you"
-						+ " haven't forgotten it!");
-				Scanner password = new Scanner(System.in);
-				int ID = password.nextInt();
-				Player loggedUser = quizMasterClient.login(ID, playerName);
-				this.currentUser = loggedUser;
-				//Not sure if this will work, but will try it - recursively call, to get menu again!
-				quizMasterClient.launch();
-			} else if (option == 2) {
-				System.out.println("Please enter your desired name:");
-				Scanner name = new Scanner(System.in);
-				String playerName = name.nextLine();
-				int iD = IDcount + 1;
-				System.out.println("Your unique ID is: " + iD + ", please remember it!");
-				quizMasterClient.newPlayer(iD, playerName);
-				quizMasterClient.launch();
-			} else if (option == 3) {
-				System.out.println("Thanks! Entering Create-a-quiz.");
-				quizMasterClient.newQuiz();
-				quizMasterClient.launch();
-			} else if (option == 4) {
-				System.out.println("Are you sure? There is no going back.");
-				System.out.println("Enter the Quiz ID, or 0 to exit back to the menu");
-				Scanner answer = new Scanner(System.in);
-				int i = answer.nextInt();
-				if (i == 0) {
-					quizMasterClient.launch();
-				} else {
-					quizMasterClient.endQuiz(i);
-				}
-				quizMasterClient.launch();
-			} else if (option == 5) {
-				System.out.println("Thanks for playing!");
-				System.exit(0);
-			}
 		} catch (MalformedURLException ex) {
 			ex.printStackTrace();
 		} catch (RemoteException ex){
 			ex.printStackTrace();
 		} catch (NotBoundException e) {
 			e.printStackTrace();
+		}
+	}
+	
+	@SuppressWarnings("resource")
+	public void run() throws RemoteException{
+		System.out.println("Hello, welcome to the Quiz Master section!");
+		System.out.println("What can we do for you?");
+		System.out.println("Press 1 to log in, 2 to create a User,"
+				+ " 3 to create a quiz, or 4 to close a quiz.");
+		System.out.println("You may enter 5 to exit.");
+		Scanner choice = new Scanner(System.in);
+		int option = choice.nextInt();
+		if (option == 1) {
+			System.out.println("Please enter your name:");
+			Scanner name = new Scanner(System.in);
+			String playerName = name.nextLine();
+			System.out.println("Please enter your unique ID (I hope you"
+					+ " haven't forgotten it!");
+			Scanner password = new Scanner(System.in);
+			int ID = password.nextInt();
+			Player loggedUser = quizMasterClient.login(ID, playerName);
+			this.currentUser = loggedUser;
+			//Not sure if this will work, but will try it - recursively call, to get menu again!
+			quizMasterClient.run();
+		} else if (option == 2) {
+			System.out.println("Please enter your desired name:");
+			Scanner name = new Scanner(System.in);
+			String playerName = name.nextLine();
+			int iD = IDcount + 1;
+			System.out.println("Your unique ID is: " + iD + ", please remember it!");
+			Player madeUser = quizMasterClient.newPlayer(iD, playerName);
+			this.currentUser = madeUser;
+			quizMasterClient.run();
+		} else if (option == 3) {
+			System.out.println("Thanks! Entering Create-a-quiz.");
+			quizMasterClient.newQuiz();
+			quizMasterClient.launch();
+		} else if (option == 4) {
+			System.out.println("Are you sure? There is no going back.");
+			System.out.println("Enter the Quiz ID, or 0 to exit back to the menu");
+			Scanner answer = new Scanner(System.in);
+			int i = answer.nextInt();
+			if (i == 0) {
+				quizMasterClient.run();
+			} else {
+				quizMasterClient.endQuiz(i);
+			}
+			quizMasterClient.run();
+		} else if (option == 5) {
+			System.out.println("Thanks for playing!");
+			System.exit(0);
 		}
 	}
 	@Override
@@ -120,8 +121,9 @@ public class SetupClientImpl implements SetupClient {
 
 	@Override
 	public Player newPlayer(int iD, String name) throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
+		Player newbie = new PlayerImpl(iD, name);
+		playerList.add(newbie);
+		return newbie;
 	}
 
 	@Override

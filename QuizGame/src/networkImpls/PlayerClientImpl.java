@@ -1,5 +1,11 @@
 package networkImpls;
 
+/**
+ * Created for PiJ Coursework 5
+ * @author Annabel Jump
+ * A Quiz Game
+ */
+
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
