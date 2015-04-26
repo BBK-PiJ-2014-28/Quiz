@@ -17,17 +17,30 @@ public class QuizImpl implements Quiz {
 	private int playerScore;
 	private int highScore = 0;
 	private ArrayList<Question> tomRiddles = new ArrayList<Question>();
-	private int scores[];
+	private int scores[] = new int[] {};
 
 	
 	//Constructors
 	
+	public QuizImpl(){
+		this.setQuizName("Ni!");
+		while(tomRiddles.size() < 20) { 
+			tomRiddles.add(new QuestionImpl());
+		}
+	}
+	
 	public QuizImpl(String thisName){
         this.setQuizName(thisName);
+        while(tomRiddles.size() < 20) { 
+			tomRiddles.add(new QuestionImpl());
+		}
     }
 
 	public QuizImpl(int ID){
         this.setQuizID(ID);
+        while(tomRiddles.size() < 20) { 
+			tomRiddles.add(new QuestionImpl());
+		}
     }
 
 	public QuizImpl(int ID, String quizName){
@@ -39,6 +52,9 @@ public class QuizImpl implements Quiz {
         this.setQuizID(ID);
         this.setQuizName(quizName);
         this.recordScore(myScore);
+        while(tomRiddles.size() < 20) { 
+			tomRiddles.add(new QuestionImpl());
+		}
     }
     
     //Getters and Setters
@@ -83,6 +99,12 @@ public class QuizImpl implements Quiz {
 		tomRiddles.add(newQuestion);
 	}
 	
+	//Method to add at any question number that user wants
+	public void setQuestion(int number, String shrubbery) {
+		Question newQuestion = new QuestionImpl(shrubbery);
+		tomRiddles.add(number-1, newQuestion);
+	}
+	
 	@Override
 	public Question getQuestion(int number){
 		Question requested = new QuestionImpl();
@@ -112,6 +134,7 @@ public class QuizImpl implements Quiz {
 		if (correct > highScore) {
 			highScore = correct;
 		}
+		//Not sure array of scores is necessary (might also, if it is, be better to use arraylist)
 	}
 	
 	@Override
