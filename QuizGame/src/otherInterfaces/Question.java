@@ -15,6 +15,18 @@ public interface Question {
 	void setRiddle(String question);
 	
 	/**
+	 * Now adding a method to display the (text) question
+	 * @return the question as a string
+	 */
+	String getQuestion();
+	
+	/**
+	 * Set the question number
+	 * @param the number of the question
+	 */
+	void setNumber(int number);
+	
+	/**
 	 * Get the question number
 	 * @return the number of the question
 	 */
@@ -29,10 +41,21 @@ public interface Question {
 	void setAnswer(int question, String answer);
 	
 	/**
+	 * Get a specific answer
+	 * @param the answer number
+	 * @return the answer as a string
+	 */
+	String getAnswer(int answerNumber);
+	
+	/**
 	 * Set which answer is the correct one
 	 * @param the answer number that is correct
 	 */
 	void setCorrect(int answer);
 	
-	
+	/**
+	 * Gets the correct answer to the question, displays it as String
+	 * @return the correct answer
+	 */
+	String getCorrect();
 }

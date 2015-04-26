@@ -36,8 +36,6 @@ public class QuestionImplTest {
 		testQuestion = null;
 	}
 
-	//I figure there should be a method to display the question in case the user forgets it
-	//TODO put method in interface & implementation
 	@Test
 	public void testGetQuestion() {
 		assertEquals("What... is your name?", testQuestion.getQuestion());		
@@ -50,14 +48,12 @@ public class QuestionImplTest {
 		assertEquals("What... is your quest?", secondTest.getQuestion());
 	}
 	
-	//I realise this will now also require setNumber method
 	@Test
 	public void testGetNumber(){
 		testQuestion.setNumber(1);
 		assertEquals(1, testQuestion.getNumber());
 	}
 	
-	//Need to add getAnswer method TODO
 	@Test
 	public void testSetAnswer() {
 		assertEquals("Blue", testQuestion.getAnswer(3));
@@ -67,7 +63,6 @@ public class QuestionImplTest {
 	@Test
 	public void testSetCorrect(){
 		testQuestion.setCorrect(4);
-		//to test this should add method to view correct answer TODO
 		assertEquals("My name is Sir Lancelot of Camelot.", testQuestion.getCorrect());
 	}
 
