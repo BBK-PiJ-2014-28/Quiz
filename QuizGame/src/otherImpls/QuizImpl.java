@@ -6,11 +6,12 @@ package otherImpls;
  * A Quiz Game
  */
 
+import java.io.Serializable;
 import java.util.*;
 
 import otherInterfaces.*;
 
-public class QuizImpl implements Quiz {
+public class QuizImpl implements Quiz, Serializable {
 
 	private String quizName;
 	private int quizID;
