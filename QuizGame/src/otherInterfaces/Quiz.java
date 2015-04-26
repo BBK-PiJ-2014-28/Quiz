@@ -9,10 +9,22 @@ package otherInterfaces;
 public interface Quiz {
 	
 	/**
+	 * Set the ID of the quiz
+	 * @param the ID number for the quiz
+	 */
+	void setQuizID(int number);
+	
+	/**
 	 * Get ID of quiz
 	 * @return the ID of the quiz
 	 */
 	int getQuizID();
+	
+	/**
+	 * Set the name of the quiz
+	 * @param the name of the quiz
+	 */
+	void setQuizName(String name);
 	
 	/**
 	 * Get Name of quiz
@@ -21,10 +33,15 @@ public interface Quiz {
 	String getQuizName();
 	
 	/**
-	 * Set a question in the quiz
-	 * @param the question
+	 * Initialise a question in the quiz
 	 */
-	void setQuestion(Question question);
+	void setQuestion();
+	
+	/**
+	 * Setting a question with the actual question
+	 * @param string of the question to be asked
+	 */
+	void setQuestion(String shrubbery);
 	
 	/**
 	 * {Additional Content:
@@ -45,6 +62,12 @@ public interface Quiz {
 	 * @param number of correct answers
 	 */
 	void recordScore(int correct);
+	
+	/**
+	 * Get the current player's score
+	 * @return the score
+	 */
+	int getMyScore();
 	
 	/**
 	 * Checks if the score is the high score

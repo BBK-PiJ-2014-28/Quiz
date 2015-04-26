@@ -35,14 +35,12 @@ public class QuizImplTest {
 		testQuiz = null;
 	}
 
-	
-	//Will require a setID method as well, just in case TODO
+
 	@Test
 	public void testGetID() {
 		assertEquals(12, testQuiz.getQuizID());
 	}
 	
-	//Realised getID shouldn't require string, that should be for Client/Server
 	
 	@Test
 	public void testSetID(){
@@ -51,13 +49,11 @@ public class QuizImplTest {
 		assertEquals(134, secondQuiz.getQuizID());
 	}
 	
-	//Same for these, shouldn't require ID
 	@Test
 	public void testGetName(){
 		assertEquals("The Holy Grail", testQuiz.getQuizName());
 	}
 	
-	//Setname method should be added TODO
 	@Test
 	public void testSetName(){
 		QuizImpl secondTest = new QuizImpl();
@@ -65,9 +61,7 @@ public class QuizImplTest {
 		assertEquals("Questions Three", secondTest.getQuizName());
 	}
 	
-	//getQuestion should be added TODO
-	//Should not require a Question already, should initialise empty Question
-	//Or have String for posedQuestion
+
 	//ArrayList of questions!
 	@Test
 	public void testSetQuestion(){
@@ -82,7 +76,6 @@ public class QuizImplTest {
 		assertTrue(testQuiz.isCorrect(1, 3));
 	}
 	
-	//Get score also going to be needed TODO
 	@Test
 	public void testSetScore(){
 		playerScore = 20;
