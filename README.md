@@ -3,7 +3,7 @@ PiJ Coursework 5 - A Quiz Game
 
 by Annabel Jump for Programming in Java Coursework 5.
 
-(Coursework not written yet, README will be updated to final instructional version once classes, interfaces etc written)
+(Coursework NOT COMPLETE, README does not reflect final position - SetupClient should work, PlayerClient won't)
 
 Classes:
 
