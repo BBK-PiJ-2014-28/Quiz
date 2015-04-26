@@ -12,13 +12,13 @@ import otherInterfaces.Quiz;
 public class QuizImpl implements Quiz {
 
 	@Override
-	public int getQuizID(String name) {
+	public int getQuizID() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public String getQuizName(int ID) {
+	public String getQuizName() {
 		// TODO Auto-generated method stub
 		return null;
 	}

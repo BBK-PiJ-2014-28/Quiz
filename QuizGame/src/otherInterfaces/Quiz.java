@@ -10,17 +10,15 @@ public interface Quiz {
 	
 	/**
 	 * Get ID of quiz
-	 * @param name of quiz
 	 * @return the ID of the quiz
 	 */
-	int getQuizID(String name);
+	int getQuizID();
 	
 	/**
 	 * Get Name of quiz
-	 * @param ID of quiz
 	 * @return the name of the quiz
 	 */
-	String getQuizName(int ID);
+	String getQuizName();
 	
 	/**
 	 * Set a question in the quiz
