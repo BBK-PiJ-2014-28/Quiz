@@ -1,18 +1,16 @@
 package networkInterfaces;
-
 /**
  * Created for PiJ Coursework 5
  * @author Annabel Jump
  * A Quiz Game
  */
 
-import otherInterfaces.Player;
-import otherInterfaces.Quiz;
+import otherInterfaces.*;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
-public interface QuizGameServer extends Remote {
+public interface QuizGameService extends Remote {
 	
 	/**
 	 * Starts the quiz with the requested ID
@@ -50,3 +48,4 @@ public interface QuizGameServer extends Remote {
 	//TODO consider how to store all things in Server - Flush method?
 
 }
+

@@ -1,4 +1,4 @@
-package networkInterfaces;
+package networkImpls;
 
 /**
  * Created for PiJ Coursework 5
@@ -9,6 +9,8 @@ package networkInterfaces;
 import java.net.MalformedURLException;
 import java.rmi.*;
 import java.rmi.registry.LocateRegistry;
+
+import networkInterfaces.QuizGameServer;
 
 
 public class QuizGameServerLauncher {
