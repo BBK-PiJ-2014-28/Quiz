@@ -7,6 +7,8 @@ package otherImpls;
  */
 
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
 
 import otherInterfaces.Question;
 
@@ -15,7 +17,7 @@ public class QuestionImpl implements Question, Serializable {
 	private static final long serialVersionUID = 2224420600163611753L;
 	
 	private String posedQuestion;
-	private String answer1, answer2, answer3, answer4;
+	private ArrayList<String> answers = new ArrayList<String>();
 	private int correctAnswer;
 	private int questionNumber;
 	
@@ -61,36 +63,44 @@ public class QuestionImpl implements Question, Serializable {
 	}
 
 	//Not currently working - needs fix
+	//Try ArrayList
 	@Override
 	public void setAnswer(int question, String answer) throws IllegalArgumentException {
-		if (question == 1){
-			this.answer1 = answer;
-		} else if (question == 2) {
-			this.answer2 = answer;
-		} else if (question == 3) {
-			this.answer3 = answer;
-		} else if (question == 4) {
-			this.answer4 = answer;
-		} else {
-			throw new IllegalArgumentException();
+		while(answers.size() < 4) { 
+			answers.add("Ni!");
 		}
+		int answerNumber = question - 1;
+		answers.set(answerNumber, answer);
+		
+		//Commented out the below as does not work
+		//if (question == 1){
+			//this.answer1 = answer;
+		//} else if (question == 2) {
+			//this.answer2 = answer;
+		//} else if (question == 3) {
+			//this.answer3 = answer;
+		//} else if (question == 4) {
+			//this.answer4 = answer;
+		//} else {
+			//throw new IllegalArgumentException();
+		//} 
 	}
 	
-	//Not currently working - needs fix
+	//Not currently working - needs fix - as setAnswer
 	@Override
 	public String getAnswer(int answerNumber) throws IllegalArgumentException {
-		String answer = null;
-		if (answerNumber == 1){
-			this.answer1 = answer;
-		} else if (answerNumber == 2) {
-			this.answer2 = answer;
-		} else if (answerNumber == 3) {
-			this.answer3 = answer;
-		} else if (answerNumber == 4) {
-			this.answer4 = answer;
-		} else {
-			throw new IllegalArgumentException();
-		}
+		String answer = answers.get(answerNumber - 1);
+		//if (answerNumber == 1){
+			//this.answer1 = answer;
+		//} else if (answerNumber == 2) {
+			//this.answer2 = answer;
+		//} else if (answerNumber == 3) {
+			//this.answer3 = answer;
+		//} else if (answerNumber == 4) {
+			//this.answer4 = answer;
+		//} else {
+			//throw new IllegalArgumentException();
+		//}
 		return answer;
 	}
 
@@ -99,19 +109,23 @@ public class QuestionImpl implements Question, Serializable {
 		this.correctAnswer = answer;
 	}
 	
+	
+	//Not working - trying ArrayList fix as above
 	@Override
 	public String getCorrect() {
-		int correct = this.correctAnswer;
-		String answer = null;
-		if (correct == 1){
-			this.answer1 = answer;
-		} else if (correct == 2) {
-			this.answer2 = answer;
-		} else if (correct == 3) {
-			this.answer3 = answer;
-		} else if (correct == 4) {
-			this.answer4 = answer;
-		}
+		int correct = this.correctAnswer - 1;
+		String answer = answers.get(correct);
+		
+		//String answer = null;
+		//if (correct == 1){
+			//this.answer1 = answer;
+		//} else if (correct == 2) {
+			//this.answer2 = answer;
+		//} else if (correct == 3) {
+			//this.answer3 = answer;
+		//} else if (correct == 4) {
+			//this.answer4 = answer;
+		//}
 		return answer;
 	}
 

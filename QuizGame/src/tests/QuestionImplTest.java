@@ -56,7 +56,7 @@ public class QuestionImplTest {
 		testQuestion.setAnswer(4, "My name is Sir Lancelot of Camelot.");
 		testQuestion.setAnswer(2, "Blue");
 		testQuestion.setAnswer(3, "Camelot. It's a silly place.");
-		assertEquals("Blue", testQuestion.getAnswer(2));
+		assertEquals("Camelot. It's a silly place.", testQuestion.getAnswer(3));
 		assertEquals("My name is Sir Lancelot of Camelot.", testQuestion.getAnswer(4));
 	}
 	
