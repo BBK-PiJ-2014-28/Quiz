@@ -1,1 +1,4 @@
 /bin/
+
+/src/networkImpls/QuizGameMasterServer.java
+/src/networkImpls/QuizGameMasterServerLauncher.java
