@@ -19,12 +19,15 @@ import otherInterfaces.*;
 public class QuizImplTest {
 	
 	private int quizID;
+	private int playerScore;
 	private ArrayList<Question> tomRiddes = new ArrayList<Question>();
+	private int scores[];
 	public QuizImpl testQuiz;
 
 	@Before
 	public void setUp() throws Exception {
 		testQuiz = new QuizImpl(12, "The Holy Grail");
+		testQuiz.setQuestion(3, "What... is your favourite colour?");
 	}
 
 	@After
@@ -68,9 +71,31 @@ public class QuizImplTest {
 	//ArrayList of questions!
 	@Test
 	public void testSetQuestion(){
-		testQuiz.setQuestion(3, "What... is your favourite colour?");
-		String riddleMeThis = testQuiz.getQuizQuestion(3).getQuestion();
+		String riddleMeThis = testQuiz.getQuestion(3).getQuestion();
 		assertEquals("What... is your favourite colour?", riddleMeThis);
+	}
+	
+	@Test
+	public void testIsCorrect(){
+		testQuiz.getQuestion(3).setAnswer(1, "Blue. No! Yell...");
+		testQuiz.getQuestion(3).setCorrect(1);
+		assertTrue(testQuiz.isCorrect(1, 3));
+	}
+	
+	//Get score also going to be needed TODO
+	@Test
+	public void testSetScore(){
+		playerScore = 20;
+		testQuiz.recordScore(playerScore);
+		assertEquals(20, testQuiz.getScore());
+	}
+	
+	@Test
+	public void testHighScore(){
+		testQuiz.recordScore(20);
+		testQuiz.recordScore(16);
+		playerScore = 21;
+		assertTrue(testQuiz.isHighScore(playerScore));
 	}
 
 }
