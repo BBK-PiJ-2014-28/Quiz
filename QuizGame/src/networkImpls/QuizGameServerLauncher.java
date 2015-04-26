@@ -22,7 +22,7 @@ public class QuizGameServerLauncher {
 	
 	private void launch(){
 		if (System.getSecurityManager() == null){
-			System.setSecurityManager(new RMISecurityManager());
+			System.setSecurityManager(new SecurityManager());
 		}
 		try {
 			LocateRegistry.createRegistry(1099);
