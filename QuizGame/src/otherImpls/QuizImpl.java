@@ -11,10 +11,24 @@ import otherInterfaces.Quiz;
 
 public class QuizImpl implements Quiz {
 
+
+	@Override
+	public void setQuizID(int number) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 	@Override
 	public int getQuizID() {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+	
+
+	@Override
+	public void setQuizName(String name) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
@@ -24,9 +38,15 @@ public class QuizImpl implements Quiz {
 	}
 
 	@Override
-	public void setQuestion(Question question) {
+	public void setQuestion() {
 		// TODO Auto-generated method stub
 
+	}
+	
+	@Override
+	public void setQuestion(String shrubbery) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
@@ -46,11 +66,18 @@ public class QuizImpl implements Quiz {
 		// TODO Auto-generated method stub
 
 	}
+	
+	@Override
+	public int getMyScore() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 
 	@Override
 	public boolean isHighScore(int score) {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
 
 }
