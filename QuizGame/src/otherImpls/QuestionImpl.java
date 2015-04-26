@@ -6,37 +6,66 @@ package otherImpls;
  * A Quiz Game
  */
 
+import java.io.Serializable;
+
 import otherInterfaces.Question;
 
-public class QuestionImpl implements Question {
+public class QuestionImpl implements Question, Serializable {
 
+	private static final long serialVersionUID = 2224420600163611753L;
+	
+	private String posedQuestion;
+	private String answer1, answer2, answer3, answer4;
+	private int correctAnswer;
+	private int questionNumber;
+	
+	//Constructors
+	
+	public QuestionImpl(String myQuestion){
+        this.setRiddle(myQuestion);
+    }
+
+	public QuestionImpl(int number){
+        this.setNumber(number);
+    }
+
+	public QuestionImpl(int number, String myQuestion){
+        this.setNumber(number);
+        this.setRiddle(myQuestion);
+    }
+	
 	@Override
 	public void setRiddle(String question) {
-		// TODO Auto-generated method stub
-
+		this.posedQuestion = question;
 	}
 	
 	@Override
 	public String getQuestion() {
-		//TODO
-		return null;
+		return this.posedQuestion;
 	}
 
 	@Override
 	public void setNumber(int number) {
-		//TODO
+		this.questionNumber = number;
 	}
 	
 	@Override
 	public int getNumber() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.questionNumber;
 	}
 
 	@Override
-	public void setAnswer(int question, String answer) {
-		// TODO Auto-generated method stub
-
+	public void setAnswer(int question, String answer) throws IllegalArgumentException {
+		if (question == 1){
+			this.answer1 = answer;
+		} else if (question == 2) {
+			this.answer2 = answer;
+		} else if (question == 3) {
+			this.answer3 = answer;
+		} else if (question == 4) {
+			this.answer4 = answer;
+		} else
+			throw new IllegalArgumentException();
 	}
 	
 	@Override

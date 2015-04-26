@@ -38,7 +38,7 @@ public interface Question {
 	 * @param the answer number
 	 * @param the answer wanted to input
 	 */
-	void setAnswer(int question, String answer);
+	void setAnswer(int question, String answer) throws IllegalArgumentException;
 	
 	/**
 	 * Get a specific answer
