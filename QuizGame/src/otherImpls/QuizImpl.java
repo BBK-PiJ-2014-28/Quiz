@@ -15,6 +15,7 @@ public class QuizImpl implements Quiz {
 	private String quizName;
 	private int quizID;
 	private int playerScore;
+	private int highScore = 0;
 	private ArrayList<Question> tomRiddles = new ArrayList<Question>();
 	private int scores[];
 
@@ -78,37 +79,51 @@ public class QuizImpl implements Quiz {
 	
 	@Override
 	public void setQuestion(String shrubbery) {
-		// TODO Auto-generated method stub
-		
+		Question newQuestion = new QuestionImpl(shrubbery);
+		tomRiddles.add(newQuestion);
+	}
+	
+	@Override
+	public Question getQuestion(int number){
+		Question requested = new QuestionImpl();
+		requested = tomRiddles.get(number - 1);
+		return requested;
 	}
 
 	@Override
 	public void changeQuestion(int number) {
 		// TODO Auto-generated method stub
-
+		//Additional content will be added (if time) once base program is complete
 	}
 
 	@Override
 	public boolean isCorrect(int answer, int question) {
-		// TODO Auto-generated method stub
-		return false;
+		if (tomRiddles.get(question - 1).getCorrect() 
+				== tomRiddles.get(question - 1).getAnswer(answer)) {
+			return true;
+		} else 
+			return false;
 	}
 
 	@Override
 	public void recordScore(int correct) {
-		// TODO Auto-generated method stub
-
+		this.playerScore = correct;
+		//Inserted into method to keep running highscore for simplicity of code
+		if (correct > highScore) {
+			highScore = correct;
+		}
 	}
 	
 	@Override
 	public int getMyScore() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.playerScore;
 	}
 
 	@Override
 	public boolean isHighScore(int score) {
-		// TODO Auto-generated method stub
+		if (score > highScore){
+			return true;
+		}
 		return false;
 	}
 

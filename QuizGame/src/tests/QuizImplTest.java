@@ -20,7 +20,8 @@ public class QuizImplTest {
 	
 	private int quizID;
 	private int playerScore;
-	private ArrayList<Question> tomRiddes = new ArrayList<Question>();
+	private int highScore = 0;
+	private ArrayList<Question> tomRiddles = new ArrayList<Question>();
 	private int scores[];
 	public QuizImpl testQuiz;
 
