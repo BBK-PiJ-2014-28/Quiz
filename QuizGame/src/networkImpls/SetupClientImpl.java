@@ -67,7 +67,8 @@ public class SetupClientImpl implements SetupClient {
 						+ " haven't forgotten it!");
 				Scanner password = new Scanner(System.in);
 				int ID = password.nextInt();
-				quizMasterClient.login(ID, playerName);
+				Player loggedUser = quizMasterClient.login(ID, playerName);
+				this.currentUser = loggedUser;
 				//Not sure if this will work, but will try it - recursively call, to get menu again!
 				quizMasterClient.launch();
 			} else if (option == 2) {
@@ -97,7 +98,6 @@ public class SetupClientImpl implements SetupClient {
 				System.out.println("Thanks for playing!");
 				System.exit(0);
 			}
-
 		} catch (MalformedURLException ex) {
 			ex.printStackTrace();
 		} catch (RemoteException ex){
@@ -108,8 +108,14 @@ public class SetupClientImpl implements SetupClient {
 	}
 	@Override
 	public Player login(int iD, String name) throws RemoteException {
-		
-		return result;
+		Player loginAttempt = playerList.get(iD - 1);
+		if (loginAttempt.getPlayerName() == name) {
+			System.out.println("Login Success!");
+		} else {
+			System.out.println("Incorrect Name or ID, please try again.");
+			loginAttempt = null;
+		}		
+		return loginAttempt;
 	}
 
 	@Override
