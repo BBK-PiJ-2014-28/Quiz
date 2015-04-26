@@ -35,6 +35,7 @@ public interface Question {
 	/**
 	 * Set an answer to the question
 	 * Multiple choice, so can have up to 4 answers
+	 * IllegalArgumentException thrown if any numbers not between 1-4 are used
 	 * @param the answer number
 	 * @param the answer wanted to input
 	 */
@@ -42,10 +43,11 @@ public interface Question {
 	
 	/**
 	 * Get a specific answer
+	 * IllegalArgumentException thrown if any numbers not between 1-4 are used
 	 * @param the answer number
 	 * @return the answer as a string
 	 */
-	String getAnswer(int answerNumber);
+	String getAnswer(int answerNumber) throws IllegalArgumentException;
 	
 	/**
 	 * Set which answer is the correct one

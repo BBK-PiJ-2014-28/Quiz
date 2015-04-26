@@ -21,6 +21,10 @@ public class QuestionImpl implements Question, Serializable {
 	
 	//Constructors
 	
+	public QuestionImpl() {
+		
+	}
+	
 	public QuestionImpl(String myQuestion){
         this.setRiddle(myQuestion);
     }
@@ -33,6 +37,8 @@ public class QuestionImpl implements Question, Serializable {
         this.setNumber(number);
         this.setRiddle(myQuestion);
     }
+	
+	//Getters and Setters
 	
 	@Override
 	public void setRiddle(String question) {
@@ -54,6 +60,7 @@ public class QuestionImpl implements Question, Serializable {
 		return this.questionNumber;
 	}
 
+	//Not currently working - needs fix
 	@Override
 	public void setAnswer(int question, String answer) throws IllegalArgumentException {
 		if (question == 1){
@@ -64,26 +71,48 @@ public class QuestionImpl implements Question, Serializable {
 			this.answer3 = answer;
 		} else if (question == 4) {
 			this.answer4 = answer;
-		} else
+		} else {
 			throw new IllegalArgumentException();
+		}
 	}
 	
+	//Not currently working - needs fix
 	@Override
-	public String getAnswer(int answerNumber) {
-		//TODO
-		return null;
+	public String getAnswer(int answerNumber) throws IllegalArgumentException {
+		String answer = null;
+		if (answerNumber == 1){
+			this.answer1 = answer;
+		} else if (answerNumber == 2) {
+			this.answer2 = answer;
+		} else if (answerNumber == 3) {
+			this.answer3 = answer;
+		} else if (answerNumber == 4) {
+			this.answer4 = answer;
+		} else {
+			throw new IllegalArgumentException();
+		}
+		return answer;
 	}
 
 	@Override
 	public void setCorrect(int answer) {
-		// TODO Auto-generated method stub
-
+		this.correctAnswer = answer;
 	}
 	
 	@Override
 	public String getCorrect() {
-		//TODO
-		return null;
+		int correct = this.correctAnswer;
+		String answer = null;
+		if (correct == 1){
+			this.answer1 = answer;
+		} else if (correct == 2) {
+			this.answer2 = answer;
+		} else if (correct == 3) {
+			this.answer3 = answer;
+		} else if (correct == 4) {
+			this.answer4 = answer;
+		}
+		return answer;
 	}
 
 }

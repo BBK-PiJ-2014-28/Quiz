@@ -25,10 +25,6 @@ public class QuestionImplTest {
 	@Before
 	public void setUp() throws Exception {
 		testQuestion = new QuestionImpl("What... is your name?");
-		testQuestion.setAnswer(1, "Arthur, King of the Britons");
-		testQuestion.setAnswer(4, "My name is Sir Lancelot of Camelot.");
-		testQuestion.setAnswer(2, "Blue");
-		testQuestion.setAnswer(3, "Camelot. It's a silly place.");
 	}
 
 	@After
@@ -56,12 +52,20 @@ public class QuestionImplTest {
 	
 	@Test
 	public void testSetAnswer() {
-		assertEquals("Blue", testQuestion.getAnswer(3));
+		testQuestion.setAnswer(1, "Arthur, King of the Britons");
+		testQuestion.setAnswer(4, "My name is Sir Lancelot of Camelot.");
+		testQuestion.setAnswer(2, "Blue");
+		testQuestion.setAnswer(3, "Camelot. It's a silly place.");
+		assertEquals("Blue", testQuestion.getAnswer(2));
 		assertEquals("My name is Sir Lancelot of Camelot.", testQuestion.getAnswer(4));
 	}
 	
 	@Test
 	public void testSetCorrect(){
+		testQuestion.setAnswer(1, "Arthur, King of the Britons");
+		testQuestion.setAnswer(4, "My name is Sir Lancelot of Camelot.");
+		testQuestion.setAnswer(2, "Blue");
+		testQuestion.setAnswer(3, "Camelot. It's a silly place.");
 		testQuestion.setCorrect(4);
 		assertEquals("My name is Sir Lancelot of Camelot.", testQuestion.getCorrect());
 	}
