@@ -10,8 +10,27 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
 
+import networkImpls.*;
+import networkInterfaces.*;
+import otherImpls.*;
+import otherInterfaces.*;
+
 public interface SetupClient extends Remote {
 
+	/**
+	 * Player to log in to Setup Client
+	 * @param player name
+	 * @param player iD
+	 */
+	Player login(int iD, String name) throws RemoteException;
+	
+	/**
+	 * Create new player
+	 * @param player name
+	 * @param player iD
+	 */
+	Player newPlayer(int iD, String name) throws RemoteException;
+	
 	/**
 	 * Enables a new quiz to be made
 	 */

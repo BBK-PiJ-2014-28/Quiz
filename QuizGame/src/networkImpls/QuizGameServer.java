@@ -46,4 +46,10 @@ public class QuizGameServer extends UnicastRemoteObject implements QuizGameServi
 
 	}
 
+	@Override
+	public Player login(int iD, String name) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

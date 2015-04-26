@@ -45,6 +45,13 @@ public interface QuizGameService extends Remote {
 	 */
 	void newPlayer(String newbieName) throws RemoteException;
 	
+	/**
+	 * Log in method for existing players
+	 * @param player name
+	 * @param player ID 
+	 */
+	Player login(int iD, String name) throws RemoteException;
+	
 	//TODO consider how to store all things in Server - Flush method?
 
 }

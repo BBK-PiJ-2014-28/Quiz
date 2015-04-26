@@ -103,10 +103,11 @@ public class QuizImpl implements Quiz, Serializable {
 		tomRiddles.add(newQuestion);
 	}
 	
+	@Override
 	//Method to add at any question number that user wants
-	public void setQuestion(int number, String shrubbery) {
+	public void setQuestion(int n, String shrubbery) {
 		Question newQuestion = new QuestionImpl(shrubbery);
-		tomRiddles.add(number-1, newQuestion);
+		tomRiddles.add(n-1, newQuestion);
 	}
 	
 	@Override

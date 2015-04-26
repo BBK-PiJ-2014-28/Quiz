@@ -44,6 +44,13 @@ public interface Quiz {
 	void setQuestion(String shrubbery);
 	
 	/**
+	 * Set question at a certain number
+	 * @param number desired
+	 * @param question
+	 */
+	void setQuestion(int n, String shrubbery);
+	
+	/**
 	 * Get Question - return the question with the given number
 	 * @return question with number
 	 */

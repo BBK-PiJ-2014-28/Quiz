@@ -123,12 +123,32 @@ public class SetupClientImpl implements SetupClient {
 	public Player newPlayer(int iD, String name) throws RemoteException {
 		Player newbie = new PlayerImpl(iD, name);
 		playerList.add(newbie);
+		System.out.println("Success! You have been added!");
 		return newbie;
 	}
 
 	@Override
 	public void newQuiz() throws RemoteException {
-		// TODO Auto-generated method stub
+		Quiz myQuiz = new QuizImpl();
+		int questionNumber = 1;
+		do { 
+			System.out.println("Please type your question:");
+			Scanner q = new Scanner(System.in);
+			String qu = q.nextLine();
+			myQuiz.setQuestion(questionNumber, qu);
+			questionNumber++;
+			int answerNumber = 1;
+			do {
+				System.out.println("Please type an answer");
+				Scanner a = new Scanner(System.in);
+				String an = a.nextLine();
+				myQuiz.getQuestion(questionNumber - 1).setAnswer(answerNumber, an);
+				answerNumber++;
+			} while (answerNumber < 4);
+			System.out.println("Please press 1 to add another question, 0 to exit.");
+			Scanner n = new Scanner(System.in);
+			int s = n.nextInt();
+		} while (s != 0);
 
 	}
 
