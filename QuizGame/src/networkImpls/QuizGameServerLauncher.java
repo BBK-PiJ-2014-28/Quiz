@@ -12,6 +12,9 @@ import java.rmi.registry.LocateRegistry;
 
 import networkImpls.QuizGameServer;
 
+/**
+ * This is the class to launch the Server
+ */
 
 public class QuizGameServerLauncher {
 
