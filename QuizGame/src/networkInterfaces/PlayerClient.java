@@ -10,9 +10,6 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
 
-import networkImpls.QuizGameServer;
-import networkImpls.QuizGameServerLauncher;
-
 public interface PlayerClient extends Remote {
 
 	/**
