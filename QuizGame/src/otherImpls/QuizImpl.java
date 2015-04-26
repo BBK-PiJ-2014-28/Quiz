@@ -46,6 +46,9 @@ public class QuizImpl implements Quiz {
 	public QuizImpl(int ID, String quizName){
         this.setQuizID(ID);
         this.setQuizName(quizName);
+        while(tomRiddles.size() < 20) { 
+			tomRiddles.add(new QuestionImpl());
+		}
     }
 
     public QuizImpl(String quizName, int ID, int myScore){
